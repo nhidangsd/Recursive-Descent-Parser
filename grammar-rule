@@ -1,0 +1,6 @@
+PART A: EBNF Grammar Rule:
+
+<relop>  ::=  < | > | <= | >= | = | != | not
+<expr>   ::=  <term> { (and|or) <term> } 
+<term>   ::= (<expr>) | <relop> <factor> | <factor> - <factor> 
+<factor> ::=  int 
