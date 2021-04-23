@@ -73,7 +73,6 @@ class recDescent:
 
     
     # validate() function will return True if the expression is valid, False otherwise 
-    # do not change the method signature as this function will be called by the autograder
     def validate(self):
 
         self.operators_dict = {
@@ -126,14 +125,13 @@ class recDescent:
                     res = False
                 
             if self.nextToken != None:
-                # if not (self.nextToken == self.priclose and self.parenCounter > 0)):
                 if self.nextToken != self.priclose or self.parenCounter <= 0:
                     res = False
 
         return res
 
 
-    # term() - determine if this is a valid term
+    # term() - will return True if the term is valid, False otherwise
     def term(self):
         """
         - Returns True if the input matches the grammar rule below and otherwise
@@ -164,7 +162,7 @@ class recDescent:
         return False
 
 
-    # factor() - determine if the input is a valid factor
+    # factor() - will return True if the factor is valid, False otherwise
     def factor(self):
         """
         - Returns True if the input matches the grammar rule below and otherwise
@@ -187,7 +185,7 @@ class recDescent:
                 Helper functions
     '''
 
-    # _advance() will load the new token
+    # _advance() - will load the new token
     def _advance(self):
 
         """
@@ -197,7 +195,7 @@ class recDescent:
         self.curToken, self.nextToken = self.nextToken, next(self.iter_tokens, None)
 
 
-    # _accept() will check if the next Token is valid operator
+    # _accept() - will check if the next Token is valid operator
     def _accept(self, key):
         """
         - Looks ahead to see if the next token is valid operator.
